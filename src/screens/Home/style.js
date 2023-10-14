@@ -1,12 +1,33 @@
 import { StyleSheet } from "react-native";
 import colors from "../../styles/colors";
-import fonts from "../../styles/fonts";
+
 
 export const styles = StyleSheet.create({
     container:{
         flex: 1,
+        
+    },
+    testezinho:{
+        color: '#fff'
     },
 
+    boxinho:{
+        padding: 30,
+        flex: 1,
+        justifyContent: 'space-around',
+        marginTop: 20,
+     },
+
+    caixaagua:{
+        width: '85%',
+        marginTop: 10,
+        color: '#000',
+        alignSelf: 'center',
+        backgroundColor: '#fff',
+        padding: 40,
+        borderRadius: 10,
+        height: 125,
+    },
     header:{
         backgroundColor: '#1c5e46',
         shadowColor: 'rgba(0, 0, 0, 0.1)',
@@ -26,6 +47,11 @@ export const styles = StyleSheet.create({
         top: 10,
     },
 
+
+    bg:{
+        position:"absolute",
+        height: 800
+    },
     logo:{
         width: 160,
         height: 40,
@@ -48,7 +74,7 @@ export const styles = StyleSheet.create({
     greeting:{
         fontSize: 18,
         color: colors.heading,
-        fontFamily: fonts.text,
+            
         alignSelf: "center",
     },
 
@@ -56,7 +82,7 @@ export const styles = StyleSheet.create({
         fontSize: 22,
         color: colors.heading,
         lineHeight: 40,
-        fontFamily: fonts.text,
+            
     },
 
     image:{
@@ -68,7 +94,7 @@ export const styles = StyleSheet.create({
     lenghtText:{
         color: colors.green, 
         fontSize: 35, 
-        fontFamily: fonts.text,
+            
     },
 
     tasks:{
@@ -100,25 +126,33 @@ export const styles = StyleSheet.create({
         marginBottom: 25,
     },
 
+
     box:{
         backgroundColor: '#e6e6e6',
         justifyContent: 'space-between',
         flexDirection: 'row',
-        padding: 15,
-        marginTop: 70,
-        borderTopLeftRadius: 15,
-        borderTopRightRadius: 15,
+        padding: 5,
+        width: 100,
+        marginTop: 20,
+        marginLeft: 6,
+        borderRadius: 15,
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 15,
         shadowOffset : { width: 1, height: 1},
+        alignContent: "center"
     },
-
+    aaa:{
+        color: '#fff',
+        alignSelf: "center",
+        marginTop: 50,
+        
+    },  
     rText:{
         marginLeft: 15,
         fontSize: 20,
         color: '#000',
-        fontFamily: fonts.text,
+            
     },
 
     textFooter:{
@@ -132,7 +166,7 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         borderBottomLeftRadius: 15,
         borderBottomRightRadius: 15,
-        fontFamily: fonts.text,
+            
     },
 
     iconRegistered:{
@@ -152,25 +186,25 @@ export const styles = StyleSheet.create({
     },
 
     textProgress:{
-        fontFamily: fonts.text,
+            
         fontSize: 16,
         color: 'gray',
     },
 
     textProgressTitle:{
-        fontFamily: fonts.text,
+            
         fontSize: 20,
-        color: '#000',
+        color: '#fff',
     },
 
     textProgressContainer:{
         marginTop: 30,
-        alignSelf: "center",
-        marginRight: 20,
+        
+        marginLeft: 35,
     },
 
     numberInside:{
-        fontFamily: fonts.text,
+            
         fontSize: 18,
         color: '#000',
         textDecorationLine: 'underline',

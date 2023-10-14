@@ -1,29 +1,23 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState, useEffect } from 'react';
-import { Image, TextInput, AsyncStorage, Modal, Alert, Linking, Text, TouchableOpacity, View, Load } from 'react-native';
+import { Image, TextInput, AsyncStorage, Modal, Alert, Linking, Text, TouchableOpacity, View } from 'react-native';
 import SwipeableRow from '../../Linhas/Usuarios';
 import api from '../../../services/api';
 import url from '../../../services/url';
-import { styles } from './styles';
+import { styles } from './style';
 import { showMessage, hideMessage } from "react-native-flash-message";
-import {Icon, EvilIcons, MaterialIcons, AntDesign, Ionicons, Entypo, MaterialCommunityIcons} from '@expo/vector-icons';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
-// import Icon from 'react-native-vector-icons/Entypo';
-// import Material from 'react-native-vector-icons/MaterialCommunityIcons';
+import { EvilIcons, MaterialIcons, AntDesign, Ionicons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/Entypo';
+import Material from 'react-native-vector-icons/MaterialCommunityIcons';
 //import * as ImagePicker from 'expo-image-picker';
-
 const DadosProps = {
     data: {
-        id: string,
-        agua: string,
-        solo: string,
-        bateria: string,
-        rega: string,
-        data_registro: string,
-        hora: string,
+        id: '',
+        porc_umidade: '',
+        porc: '',
+
     }
 }
-
 
 CardUsuarios = ({ data } = DadosProps) => {
 
@@ -63,40 +57,46 @@ CardUsuarios = ({ data } = DadosProps) => {
 
 
     return (
+
+
         <>
             {data.id === undefined && data.nome === undefined ?
 
-                <Text style={{ color: '#598', fontSize: 14, marginTop: 10, alignContent: "center", textAlign: "center" }}>Nenhum Registro Encontrado!</Text>
+                <Text style={{ color: '#595858', fontSize: 14, marginTop: 10, alignContent: "center", textAlign: "center" }}>Nenhum Registro Encontrado!</Text>
 
                 :
 
                 <View>
-                        <TouchableOpacity
-                            style={styles.box}
-                            onPress={() => setAbrirModal(true)}
-                        >
-                            <View style={styles.boxContent}>    
-
-                                <Text style={{ color: '#000', fontSize: 18, marginTop: 10 }}> <Entypo name="calendar" size={25} color={'#ff3333'} /> {data.data_registro}</Text>
-
-                                <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <Entypo name="time-slot" size={25}/> {data.hora}</Text>
-
-                                <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <MaterialCommunityIcons name="grass" size={25} color={'#00e600'}/> {data.porc_umidade}%</Text>
-                            </View>
-
-                            <View style={styles.boxContent}>
-                                <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <Entypo name="battery" size={25} color={'#40bf80'} /> {data.bateria}%</Text>
-
-                                <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <MaterialCommunityIcons name="watering-can" size={25} color={'#ff8c1a'} /> {data.rega}</Text>
-
-                                <View style={styles.alinha}><Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <Ionicons name="water" size={25} color={'#0066ff'}/> {data.porc}%</Text></View>
-                            </View>
-                            
+                    <TouchableOpacity
+                        style={styles.box}
+                        onPress={() => setAbrirModal(true)}
+                    >
+                        <View style={styles.caixaagua}>
+                            <Text style={{ color: '#f0f' }}>
+                            <Material name="grass" size={50} color={'#00e600'}/>
+                            </Text>
+                            <Text style={{ color: '#000', fontSize: 30 }}> {data.porc}%</Text>
+                        </View>
 
 
 
-                        </TouchableOpacity>
-    
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.box}
+                        onPress={() => setAbrirModal(true)}
+                    >
+                        <View style={styles.caixaagua}>
+                            <Text style={{ color: '#f0f' }}>
+                            <Ionicons name="water" size={50} color={'#0066ff'}/>
+                            </Text>
+                            <Text style={{ color: '#000', fontSize: 30 }}> {data.porc_umidade}%</Text>
+                        </View>
+
+
+
+                    </TouchableOpacity>
+
 
                 </View>
             }
@@ -106,7 +106,7 @@ CardUsuarios = ({ data } = DadosProps) => {
             <Modal
                 visible={abrirModal}
                 animationType={'fade'}
-                transparent={false}
+                transparent={true}
                 onRequestClose={() => {
                     setAbrirModal(!abrirModal)
                 }}
@@ -153,7 +153,10 @@ CardUsuarios = ({ data } = DadosProps) => {
 
 
         </>
+
     );
 }
 
+
 export default CardUsuarios;
+

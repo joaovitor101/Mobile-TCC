@@ -19,7 +19,7 @@ function StackNavigator(){
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
             
-            <Stack.Screen name="Login" component={Login} /> 
+
             <Stack.Screen name="Home" component={AuthRoutes} />      
             <Stack.Screen name="Usuario" component={Usuario} /> 
             <Stack.Screen name="NovoUsuario" component={NovoUsuario} /> 
@@ -28,7 +28,7 @@ function StackNavigator(){
             <Stack.Screen name="bateria" component={bateria}/>
             <Stack.Screen name="rega" component={rega}/>
 
-
+            <Stack.Screen name="Login" component={Login} /> 
         </Stack.Navigator>
     )
 }

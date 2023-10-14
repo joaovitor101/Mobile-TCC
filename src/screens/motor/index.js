@@ -51,15 +51,10 @@ const NovoUsuario= FC= () => {
 
         try {
             const obj = {
-                id: id_reg,
-                agua: agua,               
-                solo: solo,
-                bateria: bateria,
-                rega: rega,
-                
+                status: string,
             }
      
-            const res = await api.post('pam3etim/bd/usuarios/salvar.php', obj);
+            const res = await api.post('pam3etim/bd/motor.php', obj);
 
             if (res.data.sucesso === false) {
                 showMessage({
@@ -89,28 +84,6 @@ const NovoUsuario= FC= () => {
 
     
 
-    async function loadData() {
-        
-        try {
-            setLoading(true);
-            if (id_reg != "0") {
-                const res = await api.get(`pam3etim/bd/usuarios/listar_id.php?id=${id_reg}`);
-
-                               
-                setAgua(res.data.dados.agua);
-                setSolo(res.data.dados.solo);
-                setBateria(res.data.dados.bateria);
-                setRega(res.data.dados.rega);
-               
-                setEdit(false);
-                
-            } else {
-                setEdit(true);
-            }
-        } catch (error) {
-            console.log('Error ao carregar os Dados');
-        }
-    }
 
      
         
@@ -202,7 +175,7 @@ const NovoUsuario= FC= () => {
                 <Text style={styles.TitleInputs}>Deseja ativar a rega automática?</Text>
 
                 <TextInput
-                    placeholder="S/N"
+                    placeholder="Ativado/Desativado"
                     onChangeText={(rega) => setRega(rega)}
                     value={rega}
                     style={styles.TextInput}

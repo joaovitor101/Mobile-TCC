@@ -3,16 +3,21 @@ import fonts from "../../../styles/fonts";
 
 export const styles = StyleSheet.create({
     box:{
-        backgroundColor: '#00b386',
-        padding: 5,
-        width: '100%',
-        height: 100,
-        justifyContent: "center",
-        marginBottom: 10,
-        zIndex: 11,
-        borderRadius: 5,
-    },
-
+        
+            },
+        caixaagua:{
+            width: '85%',
+            marginTop: 10,
+            color: '#000',
+            alignSelf: 'center',
+            backgroundColor: '#fff',
+            padding: 39,
+            borderRadius: 10,
+            height: 125,
+            flexDirection:'row',
+            alignItems:'flex-end',
+            gap:50,
+        },   
     centralizarModal:{    
         flex: 1,
         justifyContent: "center",    
@@ -64,6 +69,7 @@ export const styles = StyleSheet.create({
             marginBottom: 5,
         },
     
+
         Section:{
             flexDirection: 'row',
             alignItems: "center",
