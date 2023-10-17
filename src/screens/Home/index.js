@@ -1,140 +1,3 @@
-// import React, { useEffect, useState } from 'react';
-// import { styles } from './style';
-
-// import {
-//     SafeAreaView,
-//     Text,
-//     View,
-//     ScrollView,
-//     TouchableOpacity,
-//     Image,
-//     ActivityIndicator,
-//     RefreshControl,
-//     StatusBar,
-//     Alert,
-
-// } from 'react-native';
-
-// import AsyncStorage from '@react-native-async-storage/async-storage';
-
-// import { MaterialIcons } from '@expo/vector-icons';
-// import Load from '../../components/Load';
-// import { DrawerActions, useNavigation } from '@react-navigation/core';
-// import api from '../../services/api';
-// import { AnimatedCircularProgress } from 'react-native-circular-progress';
-
-// import { useIsFocused } from '@react-navigation/native';
-
-// export default function Home() {
-//     const navigation= useNavigation();
-//     const isFocused = useIsFocused();
-
-//     const [dados, setDados] = useState([]);
-//     const [isLoading, setIsLoading] = useState(true);
-//     const [refreshing, setRefreshing] = useState(false);
-//     const [usu, setUsu] = useState('');
-
-//     const DadosProps= {
-//         data: {
-//             nome: string,       
-//         }
-//     }
-
-//     async function listarDados() {
-
-//         try {
-//             const user = await AsyncStorage.getItem('@user');
-//             const res = await api.get(`pam3etim/bd/dashboard/listar-cards.php?user=${user}`);
-//             setDados(res.data);
-
-//         } catch (error) {
-//             console.log("Erro ao Listar " + error);
-//         } finally {
-//             setIsLoading(false);
-//             setRefreshing(false);
-
-//         }
-//     }
-
-//     useEffect(() => {
-//         listarDados();
-//     }, [isFocused]);
-
-//     const onRefresh = () => {
-//         setRefreshing(true);
-//         listarDados();
-
-//     };
-
-
-//     return (
-//         <View style={{ flex: 1 }}>
-//             <StatusBar barStyle="light-content" />
-//             <View style={{ flex: 1 }}>
-//                 <View style={styles.header}>
-//                     <View style={styles.containerHeader}>
-
-//                         <TouchableOpacity
-//                             style={styles.menu}
-//                             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-//                         >
-//                             <MaterialIcons name="menu" size={35} color="white" />
-//                         </TouchableOpacity>
-
-//                         <Image style={styles.logo} source={require('../../assets/logo.jpeg')} />
-
-//                     </View>
-//                 </View>
-
-
-//                     <ScrollView
-//                         style={{ flex: 1 }}
-//                         showsVerticalScrollIndicator={false}
-//                         nestedScrollEnabled={true}
-//                         refreshControl={
-//                             <RefreshControl
-//                                 refreshing={refreshing}
-//                                 onRefresh={onRefresh}
-//                             />
-//                         }
-//                     >
-
-//                         <View style={styles.circleProgressView}>
-//                             <View style={styles.textProgressContainer}>
-//                                 <Text style={styles.textProgressTitle}>Bem Vindo Usuário!</Text>
-//                                 <Text style={styles.textProgress}>Conta administradora</Text>
-//                             </View>
-//                         </View>
-
-
-//                         <View style={styles.containerBox}>
-//                             <TouchableOpacity onPress={() => navigation.navigate("Usuario")}>
-//                                 <View>
-//                                     <View style={styles.box}>
-//                                         <View style={styles.textos}>
-//                                             <Text style={styles.rText}>para o monitoramento, clique aqui</Text>
-//                                         </View>
-//                                     </View>
-//                                     <Text style={styles.textFooter}>Cadastro dos Registros</Text>
-//                                 </View>
-//                             </TouchableOpacity>
-
-//                         </View>
-
-
-//                     </ScrollView>
-                
-//             </View>
-//         </View>
-
-
-
-
-
-
-//     )
-// }
-
 import React, { useEffect, useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import url from '../../services/url';
@@ -173,13 +36,17 @@ const Home = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [usu, setUsu] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
+  const [isHabilitado, setIsHabilitado] = useState(false);
   const [sucess, setSucess] = useState(false);
 
   const obj = {
     status: isEnabled ? 0 : 1,
-
-
   }
+
+  const objeto = {
+    status: isHabilitado ? 0 : 1,
+  }
+
   //const navigation = useNavigation();
 
   const [lista, setLista] = useState([]);
@@ -262,6 +129,42 @@ const Home = () => {
     }
   }
   //------------------------------------------------------------------
+
+  async function saveDataIrrigacao() {
+
+
+    try {
+
+
+      const res = await api.post('pam3etim/bd/irrigacao.php', objeto);
+
+      if (res.data.sucesso === false) {
+        showMessage({
+          message: "Erro ao Salvar",
+          description: res.data.mensagem,
+          type: "warning",
+          duration: 3000,
+        });
+
+        return;
+      }
+
+      setSucess(true);
+      showMessage({
+        message: "Salvo com Sucesso",
+        description: "Registro Salvo",
+        type: "success",
+        duration: 800,
+      });
+
+      //------------------------------------------------------------------------
+
+    } catch (error) {
+      Alert.alert("Ops", "Alguma coisa deu errado, tente novamente.");
+      setSucess(false);
+    }
+  }
+
   async function listarDados() {
     try {
       const user = await AsyncStorage.getItem('@user');
@@ -285,7 +188,8 @@ const Home = () => {
   };
 
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
-
+  const toggleSwitchIrrigacao = () => setIsHabilitado((previousState) => !previousState);
+  // const toggleSwitch = () => setIsHabilitado((previousState) => !previousState);
   return (
     <View style={{ flex: 1 }}>
       <StatusBar barStyle="light-content" />
@@ -325,7 +229,7 @@ const Home = () => {
             </TouchableOpacity>
           </View>
 
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf:'center', backgroundColor:'#fff', width:'80%', borderRadius:10 }}>
             <Text style={styles.testezinho}>Clique para ligar ou desligar o seu motor</Text>
             <Text style={styles.testezinho}>Seu motor está {isEnabled ? 'Ligado' : 'Desligado'}</Text>
             <Switch
@@ -336,6 +240,20 @@ const Home = () => {
                 saveData(value);
               }}
               value={isEnabled}
+            />
+          </View>
+
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf:'center', backgroundColor:'#fff', width:'80%', borderRadius:10, marginTop: 20 }}>
+            <Text style={styles.testezinho}>Clique para ligar ou desligar sua irrigação</Text>
+            <Text style={styles.testezinho}>Seu motor está {isHabilitado ? 'Ligado' : 'Desligado'}</Text>
+            <Switch
+              trackColor={{ false: '#767577', true: '#81b0ff' }}
+              thumbColor={isHabilitado ? '#f5dd4b' : '#f4f3f4'}
+              onValueChange={(value) => {
+                toggleSwitchIrrigacao (value);
+                saveDataIrrigacao(value);
+              }}
+              value={isHabilitado}
             />
           </View>
 

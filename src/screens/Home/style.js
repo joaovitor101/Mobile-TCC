@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
         
     },
     testezinho:{
-        color: '#fff'
+        color: '#000',
+        fontSize:15
     },
 
     boxinho:{
