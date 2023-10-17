@@ -23,17 +23,20 @@ const App = () => {
   const data = chartData.map(item => item.valores);
 
   const chartConfig = {
-    backgroundGradientFrom: '#f0f0f0', // Altere a cor de fundo aqui
+    
+    backgroundGradientFrom: '#0066cc',  // Altere aqui para a cor desejada
+    backgroundGradientTo: '#0066cc',    // Altere aqui para a cor desejada
+
     decimalPlaces: 1,
-    barPercentage: 0.5,
-    color: (opacity = 1) => `rgba(242, 237, 239, ${opacity})`,
+    barPercentage: 1,
+    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
     style: {
       borderRadius: 16,
     },
   };
 
   return (
-    <View style={{backgroundColor: '#fff'}}>
+    <View style={{ backgroundColor: 'lightgray', flex: 1, padding: 20 }}> 
       <Text style={{ fontSize: 18, textAlign: 'center', marginTop: 20 }}>
         Registros
       </Text>
@@ -41,7 +44,7 @@ const App = () => {
         <Text>Carregando...</Text>
       ) : (
         <BarChart
-          style={{ marginTop: 20 }}
+          style={{ marginTop: 150 }}
           data={{
             labels,
             datasets: [
@@ -51,7 +54,7 @@ const App = () => {
             ],
           }}
           width={400}
-          height={320}
+          height={300}
           chartConfig={chartConfig}
           verticalLabelRotation={10}
         />

@@ -144,8 +144,8 @@ const AuthRoutes = () => {
                 component={grafico}
                 options={{
                     tabBarIcon: (({ size, color }) => (
-                        <MaterialCommunityIcons
-                            name="water-outline"
+                        <MaterialIcons
+                            name="graphic-eq"
                             size={size}
                             color={color}
                         />
