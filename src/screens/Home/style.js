@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     },
     testezinho:{
         color: '#000',
-        fontSize:15
+        fontSize:18
     },
 
     boxinho:{
@@ -51,7 +51,9 @@ export const styles = StyleSheet.create({
 
     bg:{
         position:"absolute",
-        height: 800
+        height: 800,
+        resizeMode:'cover',
+        height:1000
     },
     logo:{
         width: 160,

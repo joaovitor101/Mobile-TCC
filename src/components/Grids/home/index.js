@@ -23,7 +23,8 @@ CardUsuarios = ({ data } = DadosProps) => {
 
     const [abrirModal, setAbrirModal] = useState(false);
     const navigation = any = useNavigation();
-
+    const isPorcentagemBaixa = data.porc <= 20;
+    const isPorcentagemUmidadeBaixa = data.porc_umidade <= 20;
 
     async function excluir(nome, id) {
 
@@ -71,11 +72,17 @@ CardUsuarios = ({ data } = DadosProps) => {
                         style={styles.box}
                         onPress={() => setAbrirModal(true)}
                     >
-                        <View style={styles.caixaagua}>
-                            <Text style={{ color: '#f0f' }}>
-                            <Material name="grass" size={50} color={'#00e600'}/>
+                        <View><Text style={styles.naoseiAA}>Umidade do seu Solo</Text></View>
+                        <View style={styles.caixaaguau}>
+                            <Text style={{ color: '#000' }}>
+                                <Material name="grass" size={50} color={'#00e600'} />
                             </Text>
-                            <Text style={{ color: '#000', fontSize: 30 }}> {data.porc}%</Text>
+                            <Text style={[styles.porcentagem, isPorcentagemBaixa && styles.porcentagemBaixa]}>
+                            {`${data.porc}%`}
+                                {data.porc <= 20 && (
+                                    <Ionicons name="alert-circle" style={{ fontSize: 25 }} />
+                                )}
+                            </Text>
                         </View>
 
 
@@ -85,12 +92,20 @@ CardUsuarios = ({ data } = DadosProps) => {
                     <TouchableOpacity
                         style={styles.box}
                         onPress={() => setAbrirModal(true)}
+
                     >
+                        <View><Text style={styles.naosei}>Armazenamento de Água</Text></View>
                         <View style={styles.caixaagua}>
-                            <Text style={{ color: '#f0f' }}>
-                            <Ionicons name="water" size={50} color={'#0066ff'}/>
+                            <Text style={{ color: '#000' }}>
+                                <Ionicons name="water" size={50} color={'#0066ff'} />
                             </Text>
-                            <Text style={{ color: '#000', fontSize: 30 }}> {data.porc_umidade}%</Text>
+                            <Text style={[styles.porcentagem, isPorcentagemUmidadeBaixa && styles.porcentagemBaixa]}>
+
+                                {`${data.porc_umidade}%`}
+                                {data.porc_umidade <= 20 && (
+                                    <Ionicons name="alert-circle" style={{ fontSize: 25 }} />
+                                )}
+                            </Text>
                         </View>
 
 
@@ -102,53 +117,6 @@ CardUsuarios = ({ data } = DadosProps) => {
             }
 
 
-
-            <Modal
-                visible={abrirModal}
-                animationType={'fade'}
-                transparent={true}
-                onRequestClose={() => {
-                    setAbrirModal(!abrirModal)
-                }}
-            >
-                <View style={styles.centralizarModal}>
-                    <View style={styles.CardContainerModal}>
-                        <TouchableOpacity
-                            style={styles.removeItem}
-                            onPress={() => setAbrirModal(false)}
-                        >
-                            <EvilIcons name="close" size={25} color="black" />
-                        </TouchableOpacity>
-
-                        <View style={styles.Section}>
-                            <Text style={styles.Entrada}>Agua: {data.agua}%</Text>
-                            <Text style={styles.Entrada}>Rega: {data.rega}</Text>
-                            <Text style={styles.Entrada}>Solo: {data.solo}%</Text>
-                            <Text style={styles.Entrada}>Bateria: {data.bateria}%</Text>
-                        </View>
-
-
-                        <TouchableOpacity onPress={() => Linking.openURL(url + 'painel/images/perfil/' + data.foto)}>
-                            {(() => {
-                                if (data.foto != 'sem-foto.jpg' && data.foto != '' && data.foto != null) {
-
-                                    return (
-                                        <View style={styles.viewImg}>
-                                            <Image style={styles.ImagemModal} source={{ uri: (url + 'painel/images/perfil/' + data.foto) }} />
-                                            <Text style={styles.textoAbrir}>(Clique para Abrir)</Text>
-                                        </View>
-                                    )
-
-                                }
-
-                            })()}
-                        </TouchableOpacity>
-
-
-
-                    </View>
-                </View>
-            </Modal>
 
 
 

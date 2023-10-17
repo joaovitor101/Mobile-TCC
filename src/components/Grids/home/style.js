@@ -2,10 +2,49 @@ import { StyleSheet } from "react-native";
 import fonts from "../../../styles/fonts";
 
 export const styles = StyleSheet.create({
+
+
+    porcentagem:{
+        fontSize: 30,
+        color: 'black',
+    },  
+    porcentagemBaixa:{
+        color: 'red',
+    },
+    naosei:{
+        alignSelf:'center',
+        fontSize: 20,
+        color: '#fff',
+        marginTop: 65
+        
+    },  
+
+    naoseiAA:{
+        alignSelf:'center',
+        fontSize: 20,
+        color: '#fff',
+        marginTop: 20   
+        
+    },  
     box:{
         
             },
         caixaagua:{
+            width: '85%',
+            marginTop: 15,
+            color: '#000',
+            alignSelf: 'center',
+            backgroundColor: '#fff',
+            padding: 39,
+            borderRadius: 10,
+            height: 125,
+            flexDirection:'row',
+            alignItems:'flex-end',
+            gap:50,
+
+        },
+        
+        caixaaguau:{
             width: '85%',
             marginTop: 10,
             color: '#000',
@@ -17,7 +56,7 @@ export const styles = StyleSheet.create({
             flexDirection:'row',
             alignItems:'flex-end',
             gap:50,
-        },   
+        },  
     centralizarModal:{    
         flex: 1,
         justifyContent: "center",    

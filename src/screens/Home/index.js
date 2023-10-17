@@ -17,7 +17,7 @@ import {
   Dimensions,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { MaterialIcons } from '@expo/vector-icons';
+import { EvilIcons, MaterialIcons, AntDesign, Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
 import { Imagem } from '../../assets/bg.png';
 import Load from '../../components/Load';
@@ -25,7 +25,7 @@ import api from '../../services/api';
 import { useIsFocused } from '@react-navigation/native';
 import { styles } from './style';
 import Grid from '../../components/Grids/home';
-
+import * as Animatable from 'react-native-animatable';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -229,12 +229,22 @@ const Home = () => {
             </TouchableOpacity>
           </View>
 
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf:'center', backgroundColor:'#fff', width:'80%', borderRadius:10 }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, elevation: 5 }}>
             <Text style={styles.testezinho}>Clique para ligar ou desligar o seu motor</Text>
-            <Text style={styles.testezinho}>Seu motor está {isEnabled ? 'Ligado' : 'Desligado'}</Text>
+            <Text style={styles.testezinho}>
+              Seu motor está
+              <Animatable.View animation="fadeIn" duration={300}>
+                {isEnabled ? (
+                  <AntDesign name="check" size={20} color="green" />
+                ) : (
+                  <AntDesign name="close" size={20} color="red" />
+                )}
+              </Animatable.View>
+            </Text>
             <Switch
-              trackColor={{ false: '#767577', true: '#81b0ff' }}
-              thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+              style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
+              trackColor={{ false: '#767577', true: '#00ff99' }}
+              thumbColor={isEnabled ? '#666666' : '#fff'}
               onValueChange={(value) => {
                 toggleSwitch(value);
                 saveData(value);
@@ -243,14 +253,24 @@ const Home = () => {
             />
           </View>
 
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf:'center', backgroundColor:'#fff', width:'80%', borderRadius:10, marginTop: 20 }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, marginTop: 20, elevation: 5 }}>
             <Text style={styles.testezinho}>Clique para ligar ou desligar sua irrigação</Text>
-            <Text style={styles.testezinho}>Seu motor está {isHabilitado ? 'Ligado' : 'Desligado'}</Text>
+            <Text style={styles.testezinho}>
+              Seu motor está
+              <Animatable.View animation="fadeIn" duration={300}>
+                {isHabilitado ? (
+                  <AntDesign name="check" size={20} color="green" />
+                ) : (
+                  <AntDesign name="close" size={20} color="red" />
+                )}
+              </Animatable.View>
+            </Text>
             <Switch
-              trackColor={{ false: '#767577', true: '#81b0ff' }}
-              thumbColor={isHabilitado ? '#f5dd4b' : '#f4f3f4'}
+              style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
+              trackColor={{ false: '#767577', true: '#00ff99' }}
+              thumbColor={isHabilitado ? '#666666' : '#fff'}
               onValueChange={(value) => {
-                toggleSwitchIrrigacao (value);
+                toggleSwitchIrrigacao(value);
                 saveDataIrrigacao(value);
               }}
               value={isHabilitado}
@@ -264,18 +284,9 @@ const Home = () => {
                 renderItem={renderItem}
 
               />
+
             </View>
 
-            <View style={styles.boxinho}>
-            <View style={{ flex: 1, height: Dimensions.get('window').height + 30, }}>
-              <FlatList
-                data={lista}
-                renderItem={renderItemGrama}
-
-              />
-            </View>
-                </View>
-            
             {/* <View style={styles.caixaagua}>
               <Text style={{ color: '#f0f' }}>
                 <MaterialIcons
