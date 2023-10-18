@@ -3,6 +3,18 @@ import fonts from "../../../styles/fonts";
 
 export const styles = StyleSheet.create({
 
+    blablabla2:{
+        backgroundColor: '#fff',
+        height: 200,
+        borderRadius: 20,
+        marginTop: 20
+    },
+
+    blablabla:{
+        backgroundColor: '#fff',
+        height: 200,
+        borderRadius: 20,
+    },
 
     porcentagem:{
         fontSize: 30,
@@ -14,48 +26,56 @@ export const styles = StyleSheet.create({
     naosei:{
         alignSelf:'center',
         fontSize: 20,
-        color: '#fff',
-        marginTop: 65
-        
+        color: '#000',
+        marginTop: 20  
     },  
 
     naoseiAA:{
         alignSelf:'center',
         fontSize: 20,
-        color: '#fff',
+        color: '#000',
         marginTop: 20   
         
     },  
-    box:{
-        
-            },
+
         caixaagua:{
+            elevation: 9,
             width: '85%',
-            marginTop: 15,
             color: '#000',
             alignSelf: 'center',
             backgroundColor: '#fff',
             padding: 39,
-            borderRadius: 10,
-            height: 125,
+            borderRadius: 100,
             flexDirection:'row',
             alignItems:'flex-end',
             gap:50,
-
+            marginTop: 10,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+            
         },
         
-        caixaaguau:{
+            caixaaguau:{
+           elevation: 9,
             width: '85%',
             marginTop: 10,
             color: '#000',
             alignSelf: 'center',
             backgroundColor: '#fff',
             padding: 39,
-            borderRadius: 10,
+            borderRadius: 100,
             height: 125,
             flexDirection:'row',
             alignItems:'flex-end',
             gap:50,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
         },  
     centralizarModal:{    
         flex: 1,

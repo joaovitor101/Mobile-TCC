@@ -24,27 +24,27 @@ const App = () => {
 
   const chartConfig = {
     
-    backgroundGradientFrom: '#0066cc',  // Altere aqui para a cor desejada
-    backgroundGradientTo: '#0066cc',    // Altere aqui para a cor desejada
+    backgroundGradientFrom: '#fff',  // Altere aqui para a cor desejada
+    backgroundGradientTo: '#fff',    // Altere aqui para a cor desejada
 
     decimalPlaces: 1,
     barPercentage: 1,
-    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+    color: (opacity = 1) => `rgba(45, 134, 45, ${opacity})`,
     style: {
       borderRadius: 16,
     },
   };
 
   return (
-    <View style={{ backgroundColor: 'lightgray', flex: 1, padding: 20 }}> 
-      <Text style={{ fontSize: 18, textAlign: 'center', marginTop: 20 }}>
-        Registros
+    <View style={{ backgroundColor: '#fff', flex: 1 }}> 
+      <Text style={{ fontSize: 18, textAlign: 'center', marginTop: 80 }}>
+        Informações
       </Text>
       {chartData.length === 0 ? (
         <Text>Carregando...</Text>
       ) : (
         <BarChart
-          style={{ marginTop: 150 }}
+          style={{ marginTop: 130 }}
           data={{
             labels,
             datasets: [

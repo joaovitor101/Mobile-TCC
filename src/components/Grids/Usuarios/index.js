@@ -19,7 +19,7 @@ const DadosProps = {
         solo: string,
         bateria: string,
         rega: string,
-        data_registro: string,
+        nome_do_dia: string,
         hora: string,
     }
 }
@@ -77,19 +77,19 @@ CardUsuarios = ({ data } = DadosProps) => {
                         >
                             <View style={styles.boxContent}>    
 
-                                <Text style={{ color: '#000', fontSize: 18, marginTop: 10 }}> <Entypo name="calendar" size={25} color={'#ff3333'} /> {data.data_registro}</Text>
+                                <Text style={{ color: '#000', fontSize: 18, marginTop: 10 }}> <Entypo name="calendar" size={25} color={'#ff3333'} /> {data.nome_do_dia}</Text>
 
                                 <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <Entypo name="time-slot" size={25}/> {data.hora}</Text>
 
-                                <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <MaterialCommunityIcons name="grass" size={25} color={'#00e600'}/> {data.porc_umidade}%</Text>
+                                <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <MaterialCommunityIcons name="grass" size={25} color={'#00e600'}/> {data.porc_umidade + '%'}</Text>
                             </View>
 
                             <View style={styles.boxContent}>
-                                <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <Entypo name="battery" size={25} color={'#40bf80'} /> {data.bateria}%</Text>
+                                <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <Entypo name="battery" size={25} color={'#40bf80'} /> {data.bateria + '%'}</Text>
 
                                 <Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <MaterialCommunityIcons name="watering-can" size={25} color={'#ff8c1a'} /> {data.rega}</Text>
 
-                                <View style={styles.alinha}><Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <Ionicons name="water" size={25} color={'#0066ff'}/> {data.porc}%</Text></View>
+                                <View style={styles.alinha}><Text style={{ color: '#000', fontSize: 20, marginTop: 10 }}> <Ionicons name="water" size={25} color={'#0066ff'}/> {data.porc+ '%'}</Text></View>
                             </View>
                             
 

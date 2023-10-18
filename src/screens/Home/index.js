@@ -216,20 +216,18 @@ const Home = () => {
             <Text style={styles.textProgressTitle}>Bem Vindo Usuário!</Text>
             <Text style={styles.textProgress}>Conta administradora</Text>
           </View>
+
+          <View style={styles.box}></View>
+
           <View style={styles.containerBox}>
             <TouchableOpacity>
-              <View>
-                <View style={styles.box}>
-                  {/* <View style={styles.textos}>
-                    <Text style={styles.rText}>para o monitoramento, clique aqui</Text>
-                  </View> */}
-                </View>
+              
                 <MaterialIcons style={styles.aaa} name="search" size={50} />
-              </View>
+                
             </TouchableOpacity>
           </View>
 
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, elevation: 5 }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, elevation: 5, height: 120 }}>
             <Text style={styles.testezinho}>Clique para ligar ou desligar o seu motor</Text>
             <Text style={styles.testezinho}>
               Seu motor está
@@ -241,7 +239,9 @@ const Home = () => {
                 )}
               </Animatable.View>
             </Text>
+            <View style={styles.switchContainer}>
             <Switch
+            
               style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
               trackColor={{ false: '#767577', true: '#00ff99' }}
               thumbColor={isEnabled ? '#666666' : '#fff'}
@@ -251,9 +251,10 @@ const Home = () => {
               }}
               value={isEnabled}
             />
+            </View>
           </View>
 
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, marginTop: 20, elevation: 5 }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, marginTop: 20, elevation: 5, height: 120 }}>
             <Text style={styles.testezinho}>Clique para ligar ou desligar sua irrigação</Text>
             <Text style={styles.testezinho}>
               Seu motor está
@@ -265,6 +266,7 @@ const Home = () => {
                 )}
               </Animatable.View>
             </Text>
+            <View style={styles.switchContainer}>
             <Switch
               style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
               trackColor={{ false: '#767577', true: '#00ff99' }}
@@ -276,7 +278,7 @@ const Home = () => {
               value={isHabilitado}
             />
           </View>
-
+          </View>
           <View style={styles.boxinho}>
             <View style={{ flex: 1, height: Dimensions.get('window').height + 30, }}>
               <FlatList

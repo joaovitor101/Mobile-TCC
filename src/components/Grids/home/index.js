@@ -72,6 +72,7 @@ CardUsuarios = ({ data } = DadosProps) => {
                         style={styles.box}
                         onPress={() => setAbrirModal(true)}
                     >
+                        <View style={styles.blablabla}>
                         <View><Text style={styles.naoseiAA}>Umidade do seu Solo</Text></View>
                         <View style={styles.caixaaguau}>
                             <Text style={{ color: '#000' }}>
@@ -84,8 +85,7 @@ CardUsuarios = ({ data } = DadosProps) => {
                                 )}
                             </Text>
                         </View>
-
-
+                        </View>
 
                     </TouchableOpacity>
 
@@ -94,6 +94,7 @@ CardUsuarios = ({ data } = DadosProps) => {
                         onPress={() => setAbrirModal(true)}
 
                     >
+                        <View style={styles.blablabla2}>
                         <View><Text style={styles.naosei}>Armazenamento de Água</Text></View>
                         <View style={styles.caixaagua}>
                             <Text style={{ color: '#000' }}>
@@ -107,7 +108,7 @@ CardUsuarios = ({ data } = DadosProps) => {
                                 )}
                             </Text>
                         </View>
-
+                        </View>
 
 
                     </TouchableOpacity>

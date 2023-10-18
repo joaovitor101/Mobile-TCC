@@ -7,6 +7,14 @@ export const styles = StyleSheet.create({
         flex: 1,
         
     },
+
+    switchContainer:{
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset:{width: 0, height: 2}
+    },
     testezinho:{
         color: '#000',
         fontSize:18
@@ -124,9 +132,14 @@ export const styles = StyleSheet.create({
     },
 
     containerBox:{
-        width: '85%',
+        width: '55%',
         alignSelf: "center",
         marginBottom: 25,
+        backgroundColor: 'white',
+        marginTop: 50,
+        alignItems: 'flex-end',
+        borderRadius: 10,
+
     },
 
 
@@ -135,20 +148,20 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
         padding: 5,
-        width: 100,
+        width: 190,
         marginTop: 20,
-        marginLeft: 6,
+        marginLeft: 35,
         borderRadius: 15,
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 15,
         shadowOffset : { width: 1, height: 1},
-        alignContent: "center"
+        alignContent: "center",
+        
     },
     aaa:{
-        color: '#fff',
-        alignSelf: "center",
-        marginTop: 50,
+        position: 'relative',
+        color: '#000',
         
     },  
     rText:{
