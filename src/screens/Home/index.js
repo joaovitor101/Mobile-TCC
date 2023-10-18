@@ -44,7 +44,7 @@ const Home = () => {
   }
 
   const objeto = {
-    status: isHabilitado ? 0 : 1,
+    status: isHabilitado ? 2 : 3,
   }
 
   //const navigation = useNavigation();
@@ -205,6 +205,7 @@ const Home = () => {
 
         <ScrollView
           style={{ flex: 1 }}
+          contentContainerStyle={{ paddingBottom: 10 }} // Adicione este estilo para evitar espaço em branco na parte inferior
           showsVerticalScrollIndicator={false}
           nestedScrollEnabled={true}
           refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
@@ -216,12 +217,13 @@ const Home = () => {
             <Text style={styles.textProgressTitle}>Bem Vindo Usuário!</Text>
             <Text style={styles.textProgress}>Conta administradora</Text>
           </View>
-
+            
           <View style={styles.box}></View>
 
           <View style={styles.containerBox}>
+            <Text style={{fontSize: 25}}>Registros</Text>
             <TouchableOpacity>
-              
+                
                 <MaterialIcons style={styles.aaa} name="search" size={50} />
                 
             </TouchableOpacity>

@@ -137,9 +137,9 @@ export const styles = StyleSheet.create({
         marginBottom: 25,
         backgroundColor: 'white',
         marginTop: 50,
-        alignItems: 'flex-end',
+        alignItems: 'center',
         borderRadius: 10,
-
+        alignItems: 'stretch'
     },
 
 
@@ -162,7 +162,7 @@ export const styles = StyleSheet.create({
     aaa:{
         position: 'relative',
         color: '#000',
-        
+        alignSelf: 'flex-end'
     },  
     rText:{
         marginLeft: 15,

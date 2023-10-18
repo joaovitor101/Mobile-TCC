@@ -69,8 +69,7 @@ CardUsuarios = ({ data } = DadosProps) => {
 
                 <View>
                     <TouchableOpacity
-                        style={styles.box}
-                        onPress={() => setAbrirModal(true)}
+                     
                     >
                         <View style={styles.blablabla}>
                         <View><Text style={styles.naoseiAA}>Umidade do seu Solo</Text></View>

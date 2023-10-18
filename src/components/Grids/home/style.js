@@ -77,11 +77,6 @@ export const styles = StyleSheet.create({
             shadowRadius: 3.84,
             elevation: 5,
         },  
-    centralizarModal:{    
-        flex: 1,
-        justifyContent: "center",    
-        backgroundColor: 'rgba(0, 0, 0, 0.37)'
-        },
     
         removeItem:{
         justifyContent: "flex-end",
@@ -89,22 +84,7 @@ export const styles = StyleSheet.create({
         marginRight: 10,
         marginTop: 15,
       },
-    
-      CardContainerModal:{
-        backgroundColor: '#FAFAFA',
-        marginBottom: 10,
-        paddingHorizontal: 15,
-        marginHorizontal: 15,
-        paddingBottom:15,
-        
-    },
-    
-    ImagemModal:{  
-            
-            width:300,
-            height:300,
-            
-        },
+
     
     
     Cliente:{
