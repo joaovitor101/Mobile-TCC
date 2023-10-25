@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
     },  
 
         caixaagua:{
-            elevation: 9,
+
             width: '85%',
             color: '#000',
             alignSelf: 'center',

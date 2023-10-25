@@ -132,14 +132,8 @@ export const styles = StyleSheet.create({
     },
 
     containerBox:{
-        width: '55%',
-        alignSelf: "center",
-        marginBottom: 25,
-        backgroundColor: 'white',
-        marginTop: 50,
-        alignItems: 'center',
-        borderRadius: 10,
-        alignItems: 'stretch'
+        flex: 1
+        
     },
 
 
@@ -159,10 +153,26 @@ export const styles = StyleSheet.create({
         alignContent: "center",
         
     },
+
+    bombom:{
+        height:60,
+        alignSelf: 'center',
+        width: 80,
+        backgroundColor: '#fff',
+        borderRadius: 30,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.5,
+        shadowRadius: 5.84,
+        elevation: 10,
+    },  
+
     aaa:{
-        position: 'relative',
-        color: '#000',
-        alignSelf: 'flex-end'
+        marginTop: 10,
+        width: 50,
+        // backgroundColor: '#fff',
+        alignSelf: 'center'
+        
     },  
     rText:{
         marginLeft: 15,

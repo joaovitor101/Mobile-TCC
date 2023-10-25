@@ -44,7 +44,7 @@ const Home = () => {
   }
 
   const objeto = {
-    status: isHabilitado ? 2 : 3,
+    status: isHabilitado ? 3 : 2,
   }
 
   //const navigation = useNavigation();
@@ -168,7 +168,7 @@ const Home = () => {
   async function listarDados() {
     try {
       const user = await AsyncStorage.getItem('@user');
-      const res = await api.get(`pam3etim/bd/dashboard/listar-cards.php?user=${user}`);
+      const res = await api.get(`pam3etim/bd/usuarios/listar.php?`);
       setDados(res.data);
     } catch (error) {
       console.log('Erro ao Listar ' + error);
@@ -183,6 +183,7 @@ const Home = () => {
   }, [isFocused]);
 
   const onRefresh = () => {
+    console.log('onRefresh called'); // Verifique se esta mensagem aparece no console
     setRefreshing(true);
     listarDados();
   };
@@ -202,7 +203,9 @@ const Home = () => {
             <Image style={styles.logo} source={require('../../assets/logo.jpeg')} />
           </View>
         </View>
-
+        <ImageBackground source={Imagem}>
+            <Image blurRadius={50} style={styles.bg} source={require('../../assets/bg.png')} />
+          </ImageBackground>
         <ScrollView
           style={{ flex: 1 }}
           contentContainerStyle={{ paddingBottom: 10 }} // Adicione este estilo para evitar espaço em branco na parte inferior
@@ -210,9 +213,7 @@ const Home = () => {
           nestedScrollEnabled={true}
           refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
         >
-          <ImageBackground source={Imagem}>
-            <Image blurRadius={50} style={styles.bg} source={require('../../assets/bg.png')} />
-          </ImageBackground>
+
           <View style={styles.textProgressContainer}>
             <Text style={styles.textProgressTitle}>Bem Vindo Usuário!</Text>
             <Text style={styles.textProgress}>Conta administradora</Text>
@@ -220,16 +221,23 @@ const Home = () => {
             
           <View style={styles.box}></View>
 
+
+          
+          <Text style={{fontSize: 25, color:'white', alignSelf:'center', marginTop: 30}}>Ir Para Registros</Text>
           <View style={styles.containerBox}>
-            <Text style={{fontSize: 25}}>Registros</Text>
-            <TouchableOpacity>
-                
-                <MaterialIcons style={styles.aaa} name="search" size={50} />
-                
+            <TouchableOpacity onPress={() => navigation.navigate('Usuario')}> 
+              <View style={{backgroundColor: 'white', width: '41%', alignSelf: 'center', marginTop: 10, borderRadius: 10, height: 80, justifyContent:'center'}}>
+                <View style={styles.bombom}>
+                <MaterialIcons style={styles.aaa} name="arrow-forward-ios" size={50} />
+                </View>
+                  </View>
             </TouchableOpacity>
           </View>
 
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, elevation: 5, height: 120 }}>
+        <View></View>
+
+          <View style={{alignSelf: 'center', color: 'white', height: 10, backgroundColor: ''}}></View>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, elevation: 5, height: 120, marginTop: 20, }}>
             <Text style={styles.testezinho}>Clique para ligar ou desligar o seu motor</Text>
             <Text style={styles.testezinho}>
               Seu motor está
