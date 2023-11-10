@@ -7,7 +7,18 @@ export const styles = StyleSheet.create({
         flex: 1,
         
     },
-
+    Colunas:{
+        
+        flexDirection: 'row',
+        marginTop: 100,
+        height: 150,
+    },
+    Colunas2:{
+   
+        flexDirection: 'row',
+        marginTop: 50,
+        
+    },
     switchContainer:{
         height: 50,
         justifyContent: 'center',
@@ -59,7 +70,6 @@ export const styles = StyleSheet.create({
 
     bg:{
         position:"absolute",
-        height: 800,
         resizeMode:'cover',
         height:1000
     },
@@ -132,8 +142,8 @@ export const styles = StyleSheet.create({
     },
 
     containerBox:{
-        flex: 1
-        
+        flex: 1,
+        height: 250
     },
 
 
@@ -155,24 +165,26 @@ export const styles = StyleSheet.create({
     },
 
     bombom:{
-        height:60,
-        alignSelf: 'center',
-        width: 80,
+        marginBottom: 90,
+        width: 50,
+        height: 50,
         backgroundColor: '#fff',
-        borderRadius: 30,
+        borderRadius:'50%',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
         shadowRadius: 5.84,
         elevation: 10,
+        marginLeft: 5,
     },  
 
     aaa:{
-        marginTop: 10,
+        
         width: 50,
         // backgroundColor: '#fff',
-        alignSelf: 'center'
-        
+        alignSelf: 'center',
+        marginLeft: 10,
+        marginTop: 5
     },  
     rText:{
         marginLeft: 15,

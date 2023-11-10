@@ -185,7 +185,7 @@ const AuthRoutes = () => {
                     ))
                 }}
             />
-            {/* <AppTab.Screen
+           <AppTab.Screen
                 name="Aba 3"
                 component={agua}
                 options={{
@@ -211,7 +211,7 @@ const AuthRoutes = () => {
                                     fontSize: 12
                                 }}
                             >
-                                Água
+                                Irrigar
                             </Text>
                             <View
                                 style={focused ? {
@@ -232,9 +232,7 @@ const AuthRoutes = () => {
                 }}
             />
 
-
-
-            <AppTab.Screen
+<AppTab.Screen
                 name="Aba 4"
                 component={solo}
 
@@ -262,7 +260,7 @@ const AuthRoutes = () => {
                                     fontSize: 12
                                 }}
                             >
-                                Solo
+                                Casa
                             </Text>
                             <View
                                 style={focused ? {
@@ -282,6 +280,9 @@ const AuthRoutes = () => {
                     ))
                 }}
             />
+
+ 
+
 
 
 
@@ -311,7 +312,7 @@ const AuthRoutes = () => {
                                     fontSize: 12
                                 }}
                             >
-                                Bateria
+                                Água
                             </Text>
                             <View
                                 style={focused ? {
@@ -379,7 +380,7 @@ const AuthRoutes = () => {
                         </View>
                     ))
                 }}
-            /> */}
+            /> 
         </AppTab.Navigator>
     )
 }

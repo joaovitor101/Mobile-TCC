@@ -17,7 +17,7 @@ import {
   Dimensions,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { EvilIcons, MaterialIcons, AntDesign, Ionicons } from '@expo/vector-icons';
+import { EvilIcons, MaterialIcons, AntDesign, Ionicons, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
 import { Imagem } from '../../assets/bg.png';
 import Load from '../../components/Load';
@@ -214,6 +214,7 @@ const Home = () => {
           refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
         >
 
+
           <View style={styles.textProgressContainer}>
             <Text style={styles.textProgressTitle}>Bem Vindo Usuário!</Text>
             <Text style={styles.textProgress}>Conta administradora</Text>
@@ -221,105 +222,64 @@ const Home = () => {
             
           <View style={styles.box}></View>
 
-
           
-          <Text style={{fontSize: 25, color:'white', alignSelf:'center', marginTop: 30}}>Ir Para Registros</Text>
+          <View style={styles.Colunas}>
           <View style={styles.containerBox}>
-            <TouchableOpacity onPress={() => navigation.navigate('Usuario')}> 
-              <View style={{backgroundColor: 'white', width: '41%', alignSelf: 'center', marginTop: 10, borderRadius: 10, height: 80, justifyContent:'center'}}>
+            <TouchableOpacity onPress={() => navigation.navigate('solo')}> 
+              <View style={{backgroundColor: 'white', width: '90%', alignSelf: 'center', marginTop: 10, borderRadius: 10, height: '75%', justifyContent:'center'}}>
+
                 <View style={styles.bombom}>
-                <MaterialIcons style={styles.aaa} name="arrow-forward-ios" size={50} />
+                <MaterialCommunityIcons style={styles.aaa} name="watering-can" size={40} color={'#4d4d00'}/>
                 </View>
+                <Text style={{position: 'absolute', fontSize: 20, alignSelf: 'center'}}> Motor Da Irrigação</Text>
                   </View>
             </TouchableOpacity>
           </View>
 
-        <View></View>
+          
+          <View style={styles.containerBox}>
+            <TouchableOpacity onPress={() => navigation.navigate('agua')}> 
+              <View style={{backgroundColor: 'white', width: '90%', alignSelf: 'center', marginTop: 10, borderRadius: 10, height: '75%', justifyContent:'center'}}>
 
-          <View style={{alignSelf: 'center', color: 'white', height: 10, backgroundColor: ''}}></View>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, elevation: 5, height: 120, marginTop: 20, }}>
-            <Text style={styles.testezinho}>Clique para ligar ou desligar o seu motor</Text>
-            <Text style={styles.testezinho}>
-              Seu motor está
-              <Animatable.View animation="fadeIn" duration={300}>
-                {isEnabled ? (
-                  <AntDesign name="check" size={20} color="green" />
-                ) : (
-                  <AntDesign name="close" size={20} color="red" />
-                )}
-              </Animatable.View>
-            </Text>
-            <View style={styles.switchContainer}>
-            <Switch
+                <View style={styles.bombom}>
+                <MaterialIcons style={styles.aaa} name="home" size={40} color={'#993d00'}/>
+                </View>
+                <Text style={{position: 'absolute', fontSize: 20, alignSelf: 'center'}}>Motor Da Casa</Text>
+                  </View>
+            </TouchableOpacity>
+          </View>
+
+        </View>
+        <View style={styles.Colunas2}>
+        <View style={styles.containerBox}>
+            <TouchableOpacity onPress={() => navigation.navigate('rega')}> 
+              <View style={{backgroundColor: 'white', width: '90%', alignSelf: 'center', marginTop: 10, borderRadius: 10, height: '75%', justifyContent:'center'}}>
+
+                <View style={styles.bombom}>
+                <MaterialCommunityIcons style={styles.aaa} name="water" size={40} color={'#0099cc'}/>
+                </View>
+                <Text style={{position: 'absolute', fontSize: 20, alignSelf: 'center'}}>Armazenamento</Text>
+                  </View>
+            </TouchableOpacity>
+          </View>
+
+          
+          <View style={styles.containerBox}>
+            <TouchableOpacity onPress={() => navigation.navigate('umidade')}> 
+              <View style={{backgroundColor: 'white', width: '90%', alignSelf: 'center', marginTop: 10, borderRadius: 10, height: '75%', justifyContent:'center'}}>
+
+                <View style={styles.bombom}>
+                <FontAwesome5 style={styles.aaa} name="temperature-high" size={35} color={'#ff3300'}/>
+                </View>
+                <Text style={{position: 'absolute', fontSize: 20, alignSelf: 'center'}}>Umidade do Solo</Text>
+                  </View>
+            </TouchableOpacity>
+          </View>
+          </View>
+
+
+
             
-              style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
-              trackColor={{ false: '#767577', true: '#00ff99' }}
-              thumbColor={isEnabled ? '#666666' : '#fff'}
-              onValueChange={(value) => {
-                toggleSwitch(value);
-                saveData(value);
-              }}
-              value={isEnabled}
-            />
-            </View>
-          </View>
-
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, marginTop: 20, elevation: 5, height: 120 }}>
-            <Text style={styles.testezinho}>Clique para ligar ou desligar sua irrigação</Text>
-            <Text style={styles.testezinho}>
-              Seu motor está
-              <Animatable.View animation="fadeIn" duration={300}>
-                {isHabilitado ? (
-                  <AntDesign name="check" size={20} color="green" />
-                ) : (
-                  <AntDesign name="close" size={20} color="red" />
-                )}
-              </Animatable.View>
-            </Text>
-            <View style={styles.switchContainer}>
-            <Switch
-              style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
-              trackColor={{ false: '#767577', true: '#00ff99' }}
-              thumbColor={isHabilitado ? '#666666' : '#fff'}
-              onValueChange={(value) => {
-                toggleSwitchIrrigacao(value);
-                saveDataIrrigacao(value);
-              }}
-              value={isHabilitado}
-            />
-          </View>
-          </View>
-          <View style={styles.boxinho}>
-            <View style={{ flex: 1, height: Dimensions.get('window').height + 30, }}>
-              <FlatList
-                data={lista}
-                renderItem={renderItem}
-
-              />
-
-            </View>
-
-            {/* <View style={styles.caixaagua}>
-              <Text style={{ color: '#f0f' }}>
-                <MaterialIcons
-                  name="waves"
-                  size={50} />
-              </Text>
-               <Text style={{ color: '#0099ff', fontSize:22 }}>{dados.porc}</Text> 
-            </View> */}
-
-
-            {/* <View style={styles.caixaagua}>
-              <Text style={{ color: '#f0f' }}>
-                <MaterialIcons
-                  name="grass"
-                  size={50} />
-              </Text>
-
-              <Text style={{ alignSelf: 'center', color: '#fff', fontSize: 30, position: 'relative', marginTop: 10 }}></Text>
-            </View> */}
-          </View>
-
         </ScrollView>
       </View>
 

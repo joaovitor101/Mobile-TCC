@@ -11,8 +11,7 @@ import agua from '../screens/agua';
 import solo from '../screens/solo';
 import bateria from '../screens/bateria';
 import rega from '../screens/rega';
-
-
+import umidade from '../screens/umidade';
 const Stack = createNativeStackNavigator();
 
 function StackNavigator(){
@@ -27,7 +26,7 @@ function StackNavigator(){
             <Stack.Screen name="solo" component={solo}/>
             <Stack.Screen name="bateria" component={bateria}/>
             <Stack.Screen name="rega" component={rega}/>
-
+            <Stack.Screen name="umidade" component={umidade}/>
             <Stack.Screen name="Login" component={Login} /> 
         </Stack.Navigator>
     )

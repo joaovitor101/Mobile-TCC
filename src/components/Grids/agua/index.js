@@ -6,7 +6,7 @@ import api from '../../../services/api';
 import url from '../../../services/url';
 import { styles } from './style';
 import { showMessage, hideMessage } from "react-native-flash-message";
-import { EvilIcons, MaterialIcons, AntDesign, Ionicons } from '@expo/vector-icons';
+import { EvilIcons, MaterialIcons, AntDesign, Ionicons, } from '@expo/vector-icons';
 //import * as ImagePicker from 'expo-image-picker';
 
 const DadosProps= {
@@ -22,36 +22,6 @@ CardUsuarios = ({ data }= DadosProps) => {
     const navigation= any = useNavigation();
 
     
-    async function excluir(nome, id) {
-
-        Alert.alert('Sair', `Você tem certeza que deseja excluir o Registro : ` + nome, [
-            {
-                text: 'Não',
-                style: 'cancel',
-            },
-
-            {
-                text: 'Sim',
-                onPress: async () => {
-                    try {
-                        const response = await api.get(`apiModelo/usuarios/excluir.php?id=${id}`);
-
-                        showMessage({
-                            message: "Excluído Sucesso",
-                            description: "Registro Excluído",
-                            type: "info",
-                            duration: 800,
-                        });
-
-                        navigation.push('Usuarios');
-                    } catch (error) {
-                        Alert.alert('Não foi possivel excluir, tente novamente!')
-                    }
-                }
-            }
-        ])
-    }
-
     
     return (
 
@@ -139,7 +109,6 @@ CardUsuarios = ({ data }= DadosProps) => {
                         </TouchableOpacity>
 
                                                 
-
              </View>
              </View>
           </Modal>
