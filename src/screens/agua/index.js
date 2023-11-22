@@ -17,7 +17,7 @@ import {
   Dimensions,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { EvilIcons, MaterialIcons, AntDesign, Ionicons } from '@expo/vector-icons';
+import { EvilIcons, MaterialIcons, AntDesign, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
 import { Imagem } from '../../assets/bg.png';
 import Load from '../../components/Load';
@@ -227,22 +227,13 @@ const Home = () => {
         <View></View>
 
           <View style={{alignSelf: 'center', color: 'white', height: 10, backgroundColor: ''}}></View>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, elevation: 5, height: 120, marginTop: 20, }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, elevation: 5, height: 340, marginTop: 90, }}>
             <Text style={styles.testezinho}>Clique para ligar ou desligar o seu motor</Text>
-            <Text style={styles.testezinho}>
-              Seu motor está
-              <Animatable.View animation="fadeIn" duration={300}>
-                {isEnabled ? (
-                  <AntDesign name="check" size={20} color="green" />
-                ) : (
-                  <AntDesign name="close" size={20} color="red" />
-                )}
-              </Animatable.View>
-            </Text>
+            <MaterialCommunityIcons name="home" size={150} color="#993d00" style={{zIndex:1, marginTop: 50}}/>
             <View style={styles.switchContainer}>
             <Switch
             
-              style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
+              style={{ transform: [{ scaleX: 2.5 }, { scaleY: 2.5 }] }}
               trackColor={{ false: '#767577', true: '#00ff99' }}
               thumbColor={isEnabled ? '#666666' : '#fff'}
               onValueChange={(value) => {

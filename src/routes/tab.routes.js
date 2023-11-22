@@ -7,10 +7,10 @@ import {
 } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AntDesign, MaterialIcons, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import { AntDesign, MaterialIcons, MaterialCommunityIcons, Ionicons, FontAwesome5 } from '@expo/vector-icons';
 
 import fonts from '../styles/fonts';
-
+import login from '../screens/login'
 import DrawerRoutes from './drawer.routes';
 import Usuario from '../screens/Usuario';
 import agua from '../screens/agua';
@@ -37,7 +37,7 @@ const AuthRoutes = () => {
                 headerShown: false,
 
                 tabBarStyle: {
-                    height: 65,
+                    height: 85,
                     paddingTop: 10
                 },
             }}
@@ -92,7 +92,7 @@ const AuthRoutes = () => {
                 }}
             />
 
-            <AppTab.Screen
+<AppTab.Screen
                 name="Usuario"
                 component={Usuario}
                 options={{
@@ -139,6 +139,56 @@ const AuthRoutes = () => {
                     ))
                 }}
             />
+
+            
+ <AppTab.Screen
+                name="login"
+                component={login}
+                options={{
+                    tabBarIcon: (({ size, color }) => (
+                        <MaterialIcons
+                            name="people-outline"
+                            size={size}
+                            color={color}
+                        />
+                    )),
+
+                    tabBarLabel: (({ focused, color }) => (
+                        <View>
+                            <Text
+                                style={focused ? {
+                                    color: color,
+                                    fontFamily: fonts.text,
+                                    fontSize: 12,
+                                    textAlign: 'center',
+
+                                } : {
+                                    color: color,
+                                    fontFamily: fonts.text,
+                                    fontSize: 12
+                                }}
+                            >
+                                Login
+                            </Text>
+                            <View
+                                style={focused ? {
+                                    backgroundColor: color,
+                                    borderColor: color,
+                                    width: 65,
+                                    height: 2,
+                                    borderTopLeftRadius: 5,
+                                    borderTopRightRadius: 5,
+                                    marginTop: 5,
+                                } : {
+                                    height: 2,
+                                }}
+                            >
+                            </View>
+                        </View>
+                    ))
+                }}
+            />
+        
 <AppTab.Screen
                 name="Aba 33"
                 component={grafico}
@@ -190,8 +240,8 @@ const AuthRoutes = () => {
                 component={agua}
                 options={{
                     tabBarIcon: (({ size, color }) => (
-                        <MaterialCommunityIcons
-                            name="water-outline"
+                        <Ionicons
+                            name="home-outline"
                             size={size}
                             color={color}
                         />
@@ -211,7 +261,7 @@ const AuthRoutes = () => {
                                     fontSize: 12
                                 }}
                             >
-                                Irrigar
+                                Casa
                             </Text>
                             <View
                                 style={focused ? {
@@ -238,8 +288,8 @@ const AuthRoutes = () => {
 
                 options={{
                     tabBarIcon: (({ size, color }) => (
-                        <Ionicons
-                            name="leaf-outline"
+                        <MaterialCommunityIcons
+                            name="watering-can-outline"
                             size={size}
                             color={color}
                         />
@@ -260,7 +310,7 @@ const AuthRoutes = () => {
                                     fontSize: 12
                                 }}
                             >
-                                Casa
+                                Irrigação
                             </Text>
                             <View
                                 style={focused ? {
@@ -291,8 +341,8 @@ const AuthRoutes = () => {
                 component={bateria}
                 options={{
                     tabBarIcon: (({ size, color }) => (
-                        <MaterialCommunityIcons
-                            name="battery-charging-outline"
+                        <FontAwesome5
+                            name="temperature-high"
                             size={size}
                             color={color}
                         />
@@ -312,7 +362,7 @@ const AuthRoutes = () => {
                                     fontSize: 12
                                 }}
                             >
-                                Água
+                                Solo
                             </Text>
                             <View
                                 style={focused ? {
@@ -340,11 +390,12 @@ const AuthRoutes = () => {
                 component={rega}
                 options={{
                     tabBarIcon: (({ size, color }) => (
+
                         <MaterialCommunityIcons
-                            name="eyedrop-outline"
-                            size={size}
-                            color={color}
-                        />
+                        name="water-outline"
+                        size={size}
+                        color={color}
+                    />
                     )),
 
                     tabBarLabel: (({ focused, color }) => (
@@ -361,7 +412,7 @@ const AuthRoutes = () => {
                                     fontSize: 12
                                 }}
                             >
-                                Rega
+                                Água
                             </Text>
                             <View
                                 style={focused ? {

@@ -23,8 +23,9 @@ export const styles = StyleSheet.create({
         shadowOffset:{width: 0, height: 2}
     },
     testezinho:{
-        color: '#000',
-        fontSize:18
+        fontSize:22,
+        marginTop: 20,
+        
     },
 
     boxinho:{

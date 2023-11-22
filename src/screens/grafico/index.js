@@ -36,6 +36,7 @@ const App = () => {
     style: {
       borderRadius: 16,
     },
+    
   };
 
 
@@ -43,7 +44,7 @@ const App = () => {
   return (
     
     <View style={{ backgroundColor: '#fff', flex: 1 }}> 
-      <Text style={{ fontSize: 25, textAlign: 'center', marginTop: 110, zIndex: 1, color: 'white' }}>
+      <Text style={{ fontSize: 25, textAlign: 'center', marginTop: 90, zIndex: 1, color: 'white' }}>
         Informações Dos Registros
       </Text>
       {chartData.length === 0 ? (

@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
 
     blablabla:{
         backgroundColor: '#fff',
-        height: 200,
+        height: 340,
         borderRadius: 20,
     },
 
@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
         alignSelf:'center',
         fontSize: 20,
         color: '#000',
-        marginTop: 20   
+        marginTop: 80   
         
     },  
 
@@ -59,6 +59,7 @@ export const styles = StyleSheet.create({
         },
         
             caixaaguau:{
+                
            elevation: 9,
             width: '85%',
             marginTop: 10,
@@ -66,14 +67,14 @@ export const styles = StyleSheet.create({
             alignSelf: 'center',
             backgroundColor: '#fff',
             padding: 39,
-            borderRadius: 100,
+            borderRadius: 20,
             height: 125,
             flexDirection:'row',
             alignItems:'flex-end',
             gap:50,
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 2 },
-            shadowOpacity: 0.25,
+            shadowOpacity: 0.5,
             shadowRadius: 3.84,
             elevation: 5,
         },  

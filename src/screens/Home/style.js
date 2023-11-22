@@ -152,7 +152,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
         padding: 5,
-        width: 190,
+        width: '80%',
         marginTop: 20,
         marginLeft: 35,
         borderRadius: 15,

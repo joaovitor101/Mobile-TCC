@@ -17,7 +17,7 @@ import {
   Dimensions,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { EvilIcons, MaterialIcons, AntDesign, Ionicons } from '@expo/vector-icons';
+import { EvilIcons, MaterialIcons, AntDesign, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
 import { Imagem } from '../../assets/bg.png';
 import Load from '../../components/Load';
@@ -26,6 +26,7 @@ import { useIsFocused } from '@react-navigation/native';
 import { styles } from './style';
 import Grid from '../../components/Grids/home';
 import * as Animatable from 'react-native-animatable';
+import Wave from "react-native-waves"
 
 const Home = () => {
   const navigation = useNavigation();
@@ -213,34 +214,29 @@ const Home = () => {
           nestedScrollEnabled={true}
           refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
         >
-
-          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Home')} style={{zIndex: 1}}>
           <Text style={styles.back}>Voltar</Text>
           </TouchableOpacity>
+
           <View style={styles.box}></View>
 
 
-          
-
-          
-
         <View></View>
 
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, marginTop: 20, elevation: 5, height: 120 }}>
-            <Text style={styles.testezinho}>Clique para ligar ou desligar sua irrigação</Text>
-            <Text style={styles.testezinho}>
-              Seu motor está
-              <Animatable.View animation="fadeIn" duration={300}>
-                {isHabilitado ? (
-                  <AntDesign name="check" size={20} color="green" />
-                ) : (
-                  <AntDesign name="close" size={20} color="red" />
-                )}
-              </Animatable.View>
-            </Text>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, marginTop: 90, elevation: 5, height: 340 }}>
+          
+        {/* <MaterialCommunityIcons name="watering-can" size={100} color="#4d4d00" style={{position: 'absolute', left:0, top: 0}}/>
+        <MaterialCommunityIcons name="watering-can" size={100} color="#4d4d00" style={{position: 'absolute', right:0, top: 0}}/> */}
+
+            {/* <Wave placement="bottom" speed={4}gap={100} color="#6699ff" height={1} ></Wave> */}
+            <Text style={styles.testezinhoText}>Clique para ligar e desligar sua irrigação</Text>
+            <View style={{flex: 1, flexDirection: 'row', gap: 40, marginTop: 20}}>
+            <MaterialCommunityIcons name="watering-can" size={150} color="#4d4d00" style={{zIndex:1, right: 20}}/>
+            
             <View style={styles.switchContainer}>
+          
             <Switch
-              style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
+              style={{ transform: [{ scaleX: 2.5 }, { scaleY: 2.5 }] }}
               trackColor={{ false: '#767577', true: '#00ff99' }}
               thumbColor={isHabilitado ? '#666666' : '#fff'}
               onValueChange={(value) => {
@@ -251,9 +247,12 @@ const Home = () => {
             />
           </View>
           </View>
+          <Text style={styles.testezinho}>
+        
+            </Text>
+          </View>
 
           
-
           </ScrollView>
       </View>
 

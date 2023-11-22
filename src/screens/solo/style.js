@@ -13,7 +13,8 @@ export const styles = StyleSheet.create({
         fontSize: 20, 
         marginLeft: 40, 
         marginTop: 20, 
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+
     },
 
     switchContainer:{
@@ -21,13 +22,22 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         shadowColor: '#000',
-        shadowOffset:{width: 0, height: 2}
+        shadowOffset:{width: 0, height: 2},
+        marginTop: 60,
+        right: 20
+        
     },
     testezinho:{
-        color: '#000',
-        fontSize:18
+        color: '#FFF',
+        fontSize:22,
+        marginTop: 50,
+        
     },
-
+    testezinhoText:{
+        fontSize:22,
+        marginTop: 100,
+        
+    },
     boxinho:{
         padding: 30,
         flex: 1,
