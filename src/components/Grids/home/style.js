@@ -9,11 +9,26 @@ export const styles = StyleSheet.create({
         borderRadius: 20,
         marginTop: 20
     },
+    footer:{
+        height: 165, // Altura do rodapé
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        overflow: 'hidden'
+},
 
+imageFooter: {
+    width: '95%', // Largura da imagem (ajuste conforme necessário)
+    height: '65%', // Altura da imagem (ajuste conforme necessário)
+    // Outros estilos para a imagem, se necessário
+    borderRadius: 10,
+    
+  },
     blablabla:{
         backgroundColor: '#fff',
-        height: 340,
         borderRadius: 20,
+        marginTop: 20,
+        height: 380,
     },
 
     porcentagem:{
@@ -34,7 +49,7 @@ export const styles = StyleSheet.create({
         alignSelf:'center',
         fontSize: 20,
         color: '#000',
-        marginTop: 80   
+        marginTop: 80,   
         
     },  
 
@@ -60,7 +75,7 @@ export const styles = StyleSheet.create({
         
             caixaaguau:{
                 
-           elevation: 9,
+            elevation: 9,
             width: '85%',
             marginTop: 10,
             color: '#000',

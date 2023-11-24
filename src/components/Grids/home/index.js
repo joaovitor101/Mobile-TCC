@@ -55,6 +55,15 @@ CardUsuarios = ({ data } = DadosProps) => {
                                     )}
                                 </Text>
                             </View>
+
+                            <View style={styles.footer}>
+                            <Image
+                           
+                                source={require('../../../assets/grass.webp')} // Substitua pelo caminho da sua imagem
+                                style={styles.imageFooter}
+                                resizeMode='repeat' // Ajuste o modo de redimensionamento conforme necessário
+                            />
+                        </View>
                         </View>
 
                   

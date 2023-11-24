@@ -229,7 +229,8 @@ const Home = () => {
           <View style={{alignSelf: 'center', color: 'white', height: 10, backgroundColor: ''}}></View>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', backgroundColor: '#fff', width: '90%', borderRadius: 10, elevation: 5, height: 340, marginTop: 90, }}>
             <Text style={styles.testezinho}>Clique para ligar ou desligar o seu motor</Text>
-            <MaterialCommunityIcons name="home" size={150} color="#993d00" style={{zIndex:1, marginTop: 50}}/>
+            <View style={styles.shadow}>
+            <MaterialCommunityIcons name="home" size={150} color="#993d00" style={{zIndex:1}}/>
             <View style={styles.switchContainer}>
             <Switch
             
@@ -242,6 +243,7 @@ const Home = () => {
               }}
               value={isEnabled}
             />
+            </View>
             </View>
           </View>
 

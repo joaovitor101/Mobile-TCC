@@ -230,8 +230,8 @@ const Home = () => {
 
             {/* <Wave placement="bottom" speed={4}gap={100} color="#6699ff" height={1} ></Wave> */}
             <Text style={styles.testezinhoText}>Clique para ligar e desligar sua irrigação</Text>
-            <View style={{flex: 1, flexDirection: 'row', gap: 40, marginTop: 20}}>
-            <MaterialCommunityIcons name="watering-can" size={150} color="#4d4d00" style={{zIndex:1, right: 20}}/>
+            <View style={styles.shadow}>
+            <MaterialCommunityIcons name="watering-can" size={150} color="#4d4d00" style={{zIndex:1, right: 20, marginLeft:25}}/>
             
             <View style={styles.switchContainer}>
           

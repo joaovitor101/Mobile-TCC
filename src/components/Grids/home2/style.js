@@ -7,14 +7,28 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fff',
         height: 200,
         borderRadius: 20,
-        marginTop: 20
+        marginTop: 20,
+        height: 360,
+        
     },
 
-    blablabla:{
-        backgroundColor: '#fff',
-        height: 200,
-        borderRadius: 20,
-    },
+    imageFooter: {
+        width: '90%', // Largura da imagem (ajuste conforme necessário)
+        height: '42%', // Altura da imagem (ajuste conforme necessário)
+        // Outros estilos para a imagem, se necessário
+        borderRadius: 50,
+        
+      },
+
+footer:{
+    
+        height: 345, // Altura do rodapé
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        borderRadius: 10,
+        overflow: 'hidden'
+},
 
     porcentagem:{
         fontSize: 30,
@@ -27,7 +41,8 @@ export const styles = StyleSheet.create({
         alignSelf:'center',
         fontSize: 20,
         color: '#000',
-        marginTop: 20  
+        marginTop: 20,
+        
     },  
 
     naoseiAA:{
@@ -45,14 +60,14 @@ export const styles = StyleSheet.create({
             alignSelf: 'center',
             backgroundColor: '#fff',
             padding: 39,
-            borderRadius: 100,
+            borderRadius: 20,
             flexDirection:'row',
             alignItems:'flex-end',
             gap:50,
             marginTop: 10,
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 2 },
-            shadowOpacity: 0.25,
+            shadowOpacity: 0.5,
             shadowRadius: 3.84,
             elevation: 5,
             

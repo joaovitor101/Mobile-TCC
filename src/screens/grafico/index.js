@@ -23,7 +23,7 @@ const App = () => {
   };
 
   const labels = chartData.map(item => item.id);
-  const data = chartData.map(item => item.valores);
+  const data = chartData.map(item => item.porc);
 
   const chartConfig = {
     

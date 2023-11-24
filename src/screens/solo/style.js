@@ -8,6 +8,15 @@ export const styles = StyleSheet.create({
         
     },
 
+    shadow:{
+        flex: 1, flexDirection: 'row', gap: 40, marginTop: 20, backgroundColor: 'white', width:300,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.5,
+        shadowRadius: 6.84,
+        elevation: 5,
+        borderRadius: 10,
+    },
     back:{
         color:'white', 
         fontSize: 20, 

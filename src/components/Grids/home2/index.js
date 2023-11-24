@@ -26,7 +26,7 @@ CardUsuarios = ({ data } = DadosProps) => {
     const isPorcentagemBaixa = data.porc <= 20;
     const isPorcentagemUmidadeBaixa = data.porc_umidade <= 20;
 
-    
+
 
     return (
 
@@ -39,7 +39,7 @@ CardUsuarios = ({ data } = DadosProps) => {
                 :
 
                 <View>
-                        {/* <View style={styles.blablabla}>
+                    {/* <View style={styles.blablabla}>
                             <View><Text style={styles.naoseiAA}>Umidade do seu Solo</Text></View>
                             <View style={styles.caixaaguau}>
                                 <Text style={{ color: '#000' }}>
@@ -57,22 +57,30 @@ CardUsuarios = ({ data } = DadosProps) => {
                             </View>
                         </View> */}
 
-                  
 
-                        <View style={styles.blablabla2}>
-                            <View><Text style={styles.naosei}>Armazenamento de Água</Text></View>
-                            <View style={styles.caixaagua}>
-                                <Text style={{ color: '#000' }}>
-                                    <Ionicons name="water" size={50} color={'#0066ff'} />
-                                </Text>
-                                <Text style={[styles.porcentagem, isPorcentagemBaixa && styles.porcentagemBaixa]}>
-                                    {`${data.porc}%`}
-                                    {data.porc <= 20 && (
-                                        <Ionicons name="alert-circle" style={{ fontSize: 25 }} />
-                                    )}
-                                </Text>
-                            </View>
+
+                    <View style={styles.blablabla2}>
+                        <View><Text style={styles.naosei}>Armazenamento de Água</Text></View>
+                        <View style={styles.caixaagua}>
+                            <Text style={{ color: '#000' }}>
+                                <Ionicons name="water" size={50} color={'#0066ff'} />
+                            </Text>
+                            <Text style={[styles.porcentagem, isPorcentagemBaixa && styles.porcentagemBaixa]}>
+                                {`${data.porc}%`}
+                                {data.porc <= 20 && (
+                                    <Ionicons name="alert-circle" style={{ fontSize: 25 }} />
+                                )}
+                            </Text>
                         </View>
+                        <View style={styles.footer}>
+                            <Image
+                           
+                                source={require('../../../assets/onda.png')} // Substitua pelo caminho da sua imagem
+                                style={styles.imageFooter}
+                                resizeMode='repeat' // Ajuste o modo de redimensionamento conforme necessário
+                            />
+                        </View>
+                    </View>
                 </View>
             }
 

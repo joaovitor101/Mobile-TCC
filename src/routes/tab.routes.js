@@ -141,7 +141,7 @@ const AuthRoutes = () => {
             />
 
             
- <AppTab.Screen
+ {/* <AppTab.Screen
                 name="login"
                 component={login}
                 options={{
@@ -187,7 +187,7 @@ const AuthRoutes = () => {
                         </View>
                     ))
                 }}
-            />
+            /> */}
         
 <AppTab.Screen
                 name="Aba 33"
@@ -235,7 +235,7 @@ const AuthRoutes = () => {
                     ))
                 }}
             />
-           <AppTab.Screen
+           {/* <AppTab.Screen
                 name="Aba 3"
                 component={agua}
                 options={{
@@ -431,7 +431,7 @@ const AuthRoutes = () => {
                         </View>
                     ))
                 }}
-            /> 
+            />  */}
         </AppTab.Navigator>
     )
 }
